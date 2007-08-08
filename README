@@ -1,0 +1,64 @@
+DB_Log_Cleaner
+==============
+Originally released as PostgreLogCleaner, 
+  Copyright (c) 2007 Sergey Kojin, released under the MIT license
+
+Revisions renamed to DB_Log_Cleaner and Copyright 2007 t.e.morgan
+License: MIT
+
+History
+-------
+This plugin was originally released by Sergey Kojin. I have extended it to 
+filter more PostgreSQL logs as well as to filter MySQL's logs. Sergey did not 
+include any contact information so I decided to release this directly, but to 
+rename it to avoid any confusion. Many thanks to Sergey for conceiving of this
+plugin and making it available. I'm sure extending it was easier than the 
+initial implementation so credit goes to Sergey.
+
+What is it
+----------
+A basic plugin that will automatically skip logging of PostgreSQL and MySQL 
+queries about the schema. These only show up in development mode by default, 
+but they can become annoying.
+
+Installation
+------------
+Simply add this plugin into your rails app.
+
+To add to your rails app:
+  ./script/plugin install -x http://svn.iprog.com/projects/rails/plugins/db_log_cleaner
+(drop the -x if you don't use subversion in your project or don't want to 
+manage plugins via svn:externals)
+
+Contact
+-------
+You may contact me with any questions, enhancements, complaints, etc. Sergey, 
+if you find this, please feel free to roll this into your original plugin if 
+you want.
+
+  --t (tm@iprog.com; http://iprog.com/)
+
+
+
+Original plugin: http://agilewebdevelopment.com/plugins/postgrelogcleaner
+
+----- Original README ------
+
+PostgreLogCleaner
+=================
+
+Make ActiveRecord logs more short and clean by removing system SQL logs lines.
+That actually only for PostgreSQL.
+
+Example of Removed Log Line
+=======
+
+ SQL (0.000000)    SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'categories'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+
+
+Copyright (c) 2007 Sergey Kojin, released under the MIT license
