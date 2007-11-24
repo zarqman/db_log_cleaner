@@ -3,5 +3,5 @@ summary: DB_Log_Cleaner: filter out pgsql/mysql schema related queries from the 
 homepage: http://iprog.com/project/db_log_cleaner
 plugin: http://svn.iprog.com/projects/rails/plugins/db_log_cleaner
 license: MIT
-version: 0.20070904
+version: 0.20071124
 rails_version: 1.2+

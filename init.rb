@@ -2,7 +2,7 @@ if %w{test development}.include? ENV['RAILS_ENV']
   if defined?(ActiveRecord::ConnectionAdapters::PostgreSQLAdapter)
     ActiveRecord::ConnectionAdapters::PostgreSQLAdapter.class_eval do
       def log_info_with_system_call_filtering(sql, name, runtime)
-        if (sql.nil? || !(sql =~ /pg_(class|index|attribute)/)) && (name != 'PK and serial sequence')
+        if (sql.nil? || !(sql =~ /pg_(class|index|attribute|constraint)/)) && (name != 'PK and serial sequence')
           log_info_without_system_call_filtering(sql, name, runtime)
         end
       end

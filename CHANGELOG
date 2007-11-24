@@ -1,3 +1,5 @@
+* 2007-nov-24 - filter out more stuff from postgres (thanks to cory forsyth)
+
 * 2007-sep-04 - add some conditional checking to support edge
 
 * 2007-aug-09 - initial release
