@@ -3,7 +3,7 @@ DB_Log_Cleaner
 Originally released as PostgreLogCleaner, 
   Copyright (c) 2007 Sergey Kojin, released under the MIT license
 
-Revisions renamed to DB_Log_Cleaner and Copyright 2007 t.e.morgan
+Revisions renamed to DB_Log_Cleaner and Copyright 2007-2008 t.e.morgan
 License: MIT
 
 History
@@ -26,9 +26,7 @@ Installation
 Simply add this plugin into your rails app.
 
 To add to your rails app:
-  ./script/plugin install -x http://svn.iprog.com/projects/rails/plugins/db_log_cleaner
-(drop the -x if you don't use subversion in your project or don't want to 
-manage plugins via svn:externals)
+  ./script/plugin install http://svn.iprog.com/projects/rails/plugins/db_log_cleaner
 
 Contact
 -------
